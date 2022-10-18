@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Chapter5</string>
+    <string name="text_title_onboarding_1">Welcome to Game Suit</string>
+    <string name="text_desc_onBoarding_1">Game Suit VS Player2</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="input_your_name">Input Your Name :</string>
+    <string name="player_vs_player2">Player vs Player2</string>
+    <string name="player_vs_computer">Player vs Computer</string>
+    <string name="name">name :</string>
+</resources>
