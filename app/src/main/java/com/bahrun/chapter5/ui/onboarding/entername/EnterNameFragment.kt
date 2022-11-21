@@ -33,7 +33,7 @@ class EnterNameFragment : Fragment(), onFinishNavigateListener {
     }
 
     private fun navigateToMenu(name : String) {
-        GameMenuActivity.startActivity(requireContext(),name)
+        GameMenuActivity.startActivityGameActivity(requireContext(),name)
         //Toast.makeText(requireContext(), "Welcome to My Game : $name", Toast.LENGTH_SHORT).show()
     }
 }

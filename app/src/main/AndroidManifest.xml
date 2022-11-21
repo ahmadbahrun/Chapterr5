@@ -25,7 +25,9 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
+        <activity
+            android:name=".ui.onboarding.OnBoardingActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.menu.GameMenuActivity"
             android:exported="false">
@@ -33,13 +35,15 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
             android:name=".ui.game.GameActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.onboarding.OnBoardingActivity"
-            android:exported="false" />
+            android:name=".ui.game.MultippelActivity"
+            android:exported="false"/>
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
     </application>
 
 </manifest>

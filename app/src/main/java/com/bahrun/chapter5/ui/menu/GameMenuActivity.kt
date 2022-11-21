@@ -4,9 +4,14 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.content.ContextCompat.startActivity
 import com.bahrun.chapter5.R
 import com.bahrun.chapter5.databinding.ActivityGameMenuBinding
+import com.bahrun.chapter5.databinding.GameActivityBinding
 import com.bahrun.chapter5.ui.game.GameActivity
+import com.bahrun.chapter5.ui.game.MultippelActivity
+import com.bahrun.chapter5.ui.menu.GameMenuActivity.Companion.startActivityGameActivity
+import kotlinx.coroutines.NonCancellable.start
 
 class GameMenuActivity : AppCompatActivity() {
 
@@ -26,25 +31,27 @@ class GameMenuActivity : AppCompatActivity() {
     }
 
     private fun setMenuClickListeners() {
-        binding.ivIcMenu1.setOnClickListener {
-
+        binding.ivIcMenuVsPlayer2.setOnClickListener {
+            MultippelActivity.startActivityMultiple(this)
         }
-        binding.ivIcMenu2.setOnClickListener {
-
+        binding.ivIcMenuVsComputer.setOnClickListener {
+            GameActivity.startActivityComputer(this)
         }
     }
 
     private fun setNameOnTitle() {
         binding.tvInput.text = "Welcome in Game Suit : $name"
-        binding.tv
+        binding.tvVsPlayer2.text = "$name VS Player2"
+        binding.tvVsComputer.text = "$name VS Computer"
     }
     companion object{
         private const val EXTRAS_NAME = "EXTRAS_NAME"
 
-        fun startActivity(context: Context, name: String){
+        fun startActivityGameActivity(context: Context, name: String){
             context.startActivity(Intent(context, GameMenuActivity::class.java).apply {
                 putExtra(EXTRAS_NAME, name)
             })
         }
+
     }
 }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.game.GameActivity">
+    tools:context=".ui.game.MultippelActivity">
 
     <ImageView
         android:id="@+id/ic_splash_screen1"
@@ -48,7 +48,7 @@
             android:layout_height="60dp"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
-            android:src="@drawable/ic_refresh" />
+            android:src="@drawable/ic_refresh"/>
 
     </LinearLayout>
 
@@ -57,22 +57,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="100dp"
-        android:layout_marginEnd="20dp"
         android:orientation="vertical"
+        android:gravity="center"
         app:layout_constraintBottom_toTopOf="@id/ll_refresh"
         app:layout_constraintRight_toRightOf="@id/ll_refresh">
 
         <TextView
-            android:id="@+id/tv_com"
+            android:id="@+id/tv_player2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Com"
+            android:text="Player2"
             android:textColor="@color/blue"
             android:layout_gravity="center"
             android:textSize="25sp"
             android:textStyle="bold"/>
 
-        <ImageView
+        <ImageButton
             android:id="@+id/ib_rock_right"
             android:layout_width="70dp"
             android:layout_height="70dp"
@@ -80,7 +80,7 @@
             android:scaleType="fitCenter"
             android:src="@drawable/ic_rock" />
 
-        <ImageView
+        <ImageButton
             android:id="@+id/ib_paper_right"
             android:layout_width="70dp"
             android:layout_height="70dp"
@@ -89,7 +89,7 @@
             android:src="@drawable/ic_paper"
             android:layout_marginVertical="30dp"/>
 
-        <ImageView
+        <ImageButton
             android:id="@+id/ib_scissors_right"
             android:layout_width="70dp"
             android:layout_height="70dp"
