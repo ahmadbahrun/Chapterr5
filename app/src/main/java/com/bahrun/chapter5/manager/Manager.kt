@@ -2,6 +2,7 @@ package com.bahrun.chapter5.manager
 
 import com.bahrun.chapter5.R
 import com.bahrun.chapter5.model.Player
+import com.bahrun.chapter5.model.PlayerConstans
 import kotlin.random.Random
 
 class Manager {
@@ -54,33 +55,33 @@ class Manager {
 //        "SCISSORS - PAPER" to true,
 //        "SCISSORS - ROCK" to false
 
-        if (computerOption == "ROCK" && playerOption == "PAPER") {
+        if (computerOption == PlayerConstans.ROCK && playerOption == PlayerConstans.PAPER) {
 //            computer loose or player win
 //            R.drawable.ic_winner
-            resultComputerVsPlayer = "Player Win"
-        } else if (computerOption == "ROCK" && playerOption == "SCISSORS") {
+            resultComputerVsPlayer = PlayerConstans.PLAYER_WIN
+        } else if (computerOption == PlayerConstans.ROCK && playerOption == PlayerConstans.SCISSORS) {
 //            computer win or player loose
 //            R.drawable.ic_lose
-            resultComputerVsPlayer = "Computer Win"
-        } else if (computerOption == "PAPER" && playerOption == "ROCK") {
+            resultComputerVsPlayer = PlayerConstans.COMPUTER_WIN
+        } else if (computerOption == PlayerConstans.PAPER && playerOption == PlayerConstans.ROCK) {
 //            computer win or player loose
 //            R.drawable.ic_lose
-            resultComputerVsPlayer = "Computer Win"
-        } else if (computerOption == "PAPER" && playerOption == "SCISSORS") {
+            resultComputerVsPlayer = PlayerConstans.COMPUTER_WIN
+        } else if (computerOption == PlayerConstans.PAPER && playerOption == PlayerConstans.SCISSORS) {
 //            computer loose or player win
 //            R.drawable.ic_winner
-            resultComputerVsPlayer = "Player Win"
-        } else if (computerOption == "SCISSORS" && playerOption == "PAPER") {
+            resultComputerVsPlayer = PlayerConstans.PLAYER_WIN
+        } else if (computerOption == PlayerConstans.SCISSORS && playerOption == PlayerConstans.ROCK) {
 //            computer win or player loose
 //            R.drawable.ic_lose
-            resultComputerVsPlayer = "Computer Win"
-        } else if (computerOption == "SCISSORS" && playerOption == "ROCK") {
+            resultComputerVsPlayer = PlayerConstans.COMPUTER_WIN
+        } else if (computerOption == PlayerConstans.SCISSORS && playerOption == PlayerConstans.PAPER) {
 //            computer loose or player win
 //            R.drawable.ic_winner
-            resultComputerVsPlayer = "Player Win"
+            resultComputerVsPlayer = PlayerConstans.PLAYER_WIN
             } else if (computerOption == playerOption) {
 //            draw
-            resultComputerVsPlayer = "Draw"
+            resultComputerVsPlayer = PlayerConstans.DRAW
         }
 
         return resultComputerVsPlayer
