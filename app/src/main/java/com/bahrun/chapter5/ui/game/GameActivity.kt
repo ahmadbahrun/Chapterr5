@@ -86,30 +86,7 @@ class GameActivity : AppCompatActivity() {
         binding.ibIcClose.setOnClickListener { EnterNameFragment().navigateToMenu(name = String()) }
     }
 
-    //    fun startingGame(playerOption:String){
-//        computerChoose == Manager().computerRandomOption()
-//        if (computerChoose == "ROCK" && playerOption == "PAPER") {
-////            computer loose or player win
-//            R.drawable.ic_winner
-//        } else if (computerChoose == "ROCK" && playerOption == "SCISSORS") {
-////            computer win or player loose
-//            R.drawable.ic_lose
-//        } else if (computerChoose == "PAPER" && playerOption == "ROCK") {
-////            computer win or player loose
-//            R.drawable.ic_lose
-//        } else if (computerChoose == "PAPER" && playerOption == "SCISSORS") {
-////            computer loose or player win
-//            R.drawable.ic_winner
-//        } else if (computerChoose == "SCISSORS" && playerOption == "PAPER") {
-////            computer win or player loose
-//            R.drawable.ic_lose
-//        } else if (computerChoose == "SCISSORS" && playerOption == "ROCK") {
-////            computer loose or player win
-//            R.drawable.ic_winner
-//        }
-//
-//
-//    }
+
     companion object {
         fun startActivityComputer(context: Context) {
             context.startActivity(Intent(context, GameActivity::class.java))
