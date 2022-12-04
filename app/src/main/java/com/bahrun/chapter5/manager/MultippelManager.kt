@@ -9,7 +9,18 @@ class MultippelManager {
     val playerTwo = ""
     var checkWinner: String = ""
 
-    fun rulesGame(PlayerOption:String) {
+    fun getChoosePlayerOne(PlayerOneOption : String){
+        val PlayerOneOption = playerOne
+        rulesGame()
+
+    }
+
+    fun getChoosePlayerTwo(PlayerTwoOption:String){
+        val PlayerTwoOption = playerTwo
+        rulesGame()
+    }
+
+    fun rulesGame():String{
 
         if (playerOne == PlayerConstans.ROCK && playerTwo == PlayerConstans.PAPER) {
             checkWinner = PlayerConstans.PLAYER_TWO_WIN
@@ -26,5 +37,6 @@ class MultippelManager {
         } else if (playerOne == playerTwo) {
             checkWinner = PlayerConstans.DRAW
         }
+        return checkWinner
     }
 }

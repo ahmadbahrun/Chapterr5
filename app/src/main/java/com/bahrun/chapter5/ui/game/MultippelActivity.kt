@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
 import android.widget.ImageView
+import androidx.core.view.isVisible
 import com.bahrun.chapter5.R
 import com.bahrun.chapter5.databinding.ActivityMultippelBinding
 import com.bahrun.chapter5.databinding.GameActivityBinding.inflate
@@ -34,75 +35,31 @@ class MultippelActivity : AppCompatActivity() {
         hasilYangAkanKeluar = binding.ivResult
         resetGame = binding.ibRefresh
     }
-    fun check(){
-        when(PlayerConstans.PLAYER_ONE_WIN){
+    fun setVisibility(playerOneVisible : Boolean){
+        binding.ibRockLeft.isVisible = playerOneVisible
+        binding.ibPaperLeft.isVisible = playerOneVisible
+        binding.ibScissorsLeft.isVisible = playerOneVisible
+    }
 
+    fun set(){
+        when(MultippelManager().getChoosePlayerOne("ROCK")){
+            setVisibility(playerOneVisible = false)
         }
     }
 
+    fun tryFun(){
+        when(set()){
+            MultippelManager().getChoosePlayerTwo("ROCK")
+        }
+    }
+
+
     fun setOnClickStartGame(){
         binding.ibRockLeft.setOnClickListener {
-            hasil = MultippelManager().rulesGame("ROCK").toString()
-            if (hasil == PlayerConstans.PLAYER_WIN) {
-                hasilYangAkanKeluar.setImageResource(R.drawable.ic_winner)
-            } else if (hasil == PlayerConstans.COMPUTER_WIN) {
-                hasilYangAkanKeluar.setImageResource(R.drawable.ic_lose)
-            } else if (hasil == PlayerConstans.DRAW) {
-                hasilYangAkanKeluar.setImageResource(R.drawable.ic_draw)
-            }
-        }
-        binding.ibPaperLeft.setOnClickListener {
-            hasil = MultippelManager().rulesGame("PAPER").toString()
-            if (hasil == PlayerConstans.PLAYER_WIN) {
-                hasilYangAkanKeluar.setImageResource(R.drawable.ic_winner)
-            } else if (hasil == PlayerConstans.COMPUTER_WIN) {
-                hasilYangAkanKeluar.setImageResource(R.drawable.ic_lose)
-            } else if (hasil == PlayerConstans.DRAW) {
-                hasilYangAkanKeluar.setImageResource(R.drawable.ic_draw)
-            }
-        }
-        binding.ibScissorsLeft.setOnClickListener {
-            hasil = MultippelManager().rulesGame("SCISSORS").toString()
-            if (hasil == PlayerConstans.PLAYER_WIN) {
-                hasilYangAkanKeluar.setImageResource(R.drawable.ic_winner)
-            } else if (hasil == PlayerConstans.COMPUTER_WIN) {
-                hasilYangAkanKeluar.setImageResource(R.drawable.ic_lose)
-            } else if (hasil == PlayerConstans.DRAW) {
-                hasilYangAkanKeluar.setImageResource(R.drawable.ic_draw)
-            }
+            tryFun()
+
         }
 
-        binding.ibRockRight.setOnClickListener {
-            hasil = MultippelManager().rulesGame("ROCK").toString()
-            if (hasil == PlayerConstans.PLAYER_WIN) {
-                hasilYangAkanKeluar.setImageResource(R.drawable.ic_winner)
-            } else if (hasil == PlayerConstans.COMPUTER_WIN) {
-                hasilYangAkanKeluar.setImageResource(R.drawable.ic_lose)
-            } else if (hasil == PlayerConstans.DRAW) {
-                hasilYangAkanKeluar.setImageResource(R.drawable.ic_draw)
-            }
-        }
-        binding.ibPaperRight.setOnClickListener {
-            hasil = MultippelManager().rulesGame("PAPER").toString()
-            if (hasil == PlayerConstans.PLAYER_WIN) {
-                hasilYangAkanKeluar.setImageResource(R.drawable.ic_winner)
-            } else if (hasil == PlayerConstans.COMPUTER_WIN) {
-                hasilYangAkanKeluar.setImageResource(R.drawable.ic_lose)
-            } else if (hasil == PlayerConstans.DRAW) {
-                hasilYangAkanKeluar.setImageResource(R.drawable.ic_draw)
-            }
-        }
-        binding.ibScissorsRight
-            .setOnClickListener {
-            hasil = MultippelManager().rulesGame("SCISSORS").toString()
-            if (hasil == PlayerConstans.PLAYER_WIN) {
-                hasilYangAkanKeluar.setImageResource(R.drawable.ic_winner)
-            } else if (hasil == PlayerConstans.COMPUTER_WIN) {
-                hasilYangAkanKeluar.setImageResource(R.drawable.ic_lose)
-            } else if (hasil == PlayerConstans.DRAW) {
-                hasilYangAkanKeluar.setImageResource(R.drawable.ic_draw)
-            }
-        }
     }
     companion object{
         fun startActivityMultiple(context: Context){
