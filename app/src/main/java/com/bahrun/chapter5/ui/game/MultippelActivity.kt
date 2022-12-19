@@ -41,22 +41,22 @@ class MultippelActivity : AppCompatActivity() {
         binding.ibScissorsLeft.isVisible = playerOneVisible
     }
 
-    fun set(){
+    /*fun set(){
         when(MultippelManager().getChoosePlayerOne("ROCK")){
             setVisibility(playerOneVisible = false)
         }
     }
 
-    fun tryFun(){
+   fun tryFun(){
         when(set()){
             MultippelManager().getChoosePlayerTwo("ROCK")
         }
-    }
+    }*/
 
 
     fun setOnClickStartGame(){
         binding.ibRockLeft.setOnClickListener {
-            tryFun()
+
 
         }
 
