@@ -5,22 +5,10 @@ import com.bahrun.chapter5.model.PlayerConstans
 
 class MultippelManager {
     val choice = listOf("ROCK", "PAPER", "SCISSORS")
-    val playerOne = ""
-    val playerTwo = ""
     var checkWinner: String = ""
 
-    fun getChoosePlayerOne(PlayerOneOption : String){
-        val PlayerOneOption = playerOne
-        rulesGame()
 
-    }
-
-    fun getChoosePlayerTwo(PlayerTwoOption:String){
-        val PlayerTwoOption = playerTwo
-        rulesGame()
-    }
-
-    fun rulesGame():String{
+    fun rulesGame(playerOne:String, playerTwo:String):String{
 
         if (playerOne == PlayerConstans.ROCK && playerTwo == PlayerConstans.PAPER) {
             checkWinner = PlayerConstans.PLAYER_TWO_WIN

@@ -9,4 +9,6 @@ object PlayerConstans {
     const val DRAW = "DRAW"
     const val PLAYER_ONE_WIN = "PLAYER_ONE_WIN"
     const val PLAYER_TWO_WIN = "PLAYER_TWO_WIN"
+    var PLAYER_ONE = "PLAYER_ONE"
+    var PLAYER_TWO = "PLAYER_TWO"
 }

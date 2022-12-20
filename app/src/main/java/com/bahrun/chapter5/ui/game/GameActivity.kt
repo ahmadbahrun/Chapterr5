@@ -40,9 +40,7 @@ class GameActivity : AppCompatActivity() {
         reset()
         closeToMenu()
 
-        binding.btAlert.setOnClickListener{
 
-        }
 
     }
     fun run(){
@@ -61,9 +59,9 @@ class GameActivity : AppCompatActivity() {
             if (hasil == PlayerConstans.PLAYER_WIN) {
                 dialogWinner()
             } else if (hasil == PlayerConstans.COMPUTER_WIN) {
-                hasilYangAkanKeluar.setImageResource(R.drawable.ic_lose)
+                dialoglose()
             } else if (hasil == PlayerConstans.DRAW) {
-                hasilYangAkanKeluar.setImageResource(R.drawable.ic_draw)
+                dialogDraw()
             }
         }
         binding.ibPaperLeft.setOnClickListener {
@@ -71,9 +69,9 @@ class GameActivity : AppCompatActivity() {
             if (hasil == PlayerConstans.PLAYER_WIN) {
                 dialogWinner()
             } else if (hasil == PlayerConstans.COMPUTER_WIN) {
-                hasilYangAkanKeluar.setImageResource(R.drawable.ic_lose)
+                dialoglose()
             } else if (hasil == PlayerConstans.DRAW) {
-                hasilYangAkanKeluar.setImageResource(R.drawable.ic_draw)
+                dialogDraw()
             }
         }
         binding.ibScissorsLeft.setOnClickListener {
@@ -81,9 +79,9 @@ class GameActivity : AppCompatActivity() {
             if (hasil == PlayerConstans.PLAYER_WIN) {
                 dialogWinner()
             } else if (hasil == PlayerConstans.COMPUTER_WIN) {
-                hasilYangAkanKeluar.setImageResource(R.drawable.ic_lose)
+                dialoglose()
             } else if (hasil == PlayerConstans.DRAW) {
-                hasilYangAkanKeluar.setImageResource(R.drawable.ic_draw)
+                dialogDraw()
             }
         }
     }
@@ -100,13 +98,38 @@ class GameActivity : AppCompatActivity() {
         dialog.setMessage("VICTORY")
         dialog.setCancelable(false)
         dialog.setPositiveButton("Play Again",){dialogInterface,_ ->
-            dialogInterface.dismiss()
+            reset()
         }
         dialog.setNegativeButton("Back To Menu"){dialogInterface,p1 ->
-            Toast.makeText(this, "No", Toast.LENGTH_SHORT).show()
+            EnterNameFragment().navigateToMenu(name = String())
         }
         dialog.show()
-
+    }
+    fun dialogDraw(){
+        val dialog = AlertDialog.Builder(this)
+        dialog.setTitle("GAME RESULT")
+        dialog.setMessage("DRAW")
+        dialog.setCancelable(false)
+        dialog.setPositiveButton("Play Again",){dialogInterface,_ ->
+            resetGame.setOnClickListener { hasilYangAkanKeluar.setImageResource(R.drawable.ic_versus) }
+        }
+        dialog.setNegativeButton("Back To Menu"){dialogInterface,p1 ->
+            EnterNameFragment().navigateToMenu(name = String())
+        }
+        dialog.show()
+    }
+    fun dialoglose(){
+        val dialog = AlertDialog.Builder(this)
+        dialog.setTitle("GAME RESULT")
+        dialog.setMessage("DEFEAT")
+        dialog.setCancelable(false)
+        dialog.setPositiveButton("Play Again",){dialogInterface,_ ->
+            resetGame.setOnClickListener { hasilYangAkanKeluar.setImageResource(R.drawable.ic_versus) }
+        }
+        dialog.setNegativeButton("Back To Menu"){dialogInterface,p1 ->
+            EnterNameFragment().navigateToMenu(name = String())
+        }
+        dialog.show()
     }
 
 

@@ -16,7 +16,9 @@ class DialogCustome : DialogFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return super.onCreateView(inflater, container, savedInstanceState)
+        super.onCreateView(inflater, container, savedInstanceState)
+        binding = CustomeDialogBinding.inflate(inflater,container,false)
+        return binding.root
 
     }
 
